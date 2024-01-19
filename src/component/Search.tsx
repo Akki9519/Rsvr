@@ -1,7 +1,5 @@
 import React, {useState} from 'react';
-import {TextInput, View, StyleSheet,Image} from 'react-native';
-
-
+import {TextInput, View, StyleSheet, Image} from 'react-native';
 
 const Search = () => {
   const [search, setSearch] = useState('');
@@ -9,7 +7,10 @@ const Search = () => {
     <View style={styles.container}>
       <View style={styles.inner}>
         <View style={styles.search} pointerEvents="none">
-        <Image source={require("../assets/images/icons/search.png")} style={{height:30 ,width:30 }}/>
+          <Image
+            source={require('../assets/images/icons/search.png')}
+            style={{height: 30, width: 30}}
+          />
         </View>
         <TextInput
           style={styles.field}
@@ -17,7 +18,6 @@ const Search = () => {
           value={search}
           onChangeText={setSearch}
         />
-       
       </View>
     </View>
   );
@@ -37,24 +37,24 @@ const styles = StyleSheet.create({
     top: 15,
     left: 10,
     zIndex: 1,
-    paddingLeft:4
+    paddingLeft: 4,
   },
   field: {
-    backgroundColor: "#ffffff",
+    backgroundColor: '#ffffff',
     paddingLeft: 52,
     paddingRight: 18,
     paddingVertical: 18,
     borderRadius: 16,
     height: 54,
     flex: 1,
-    shadowColor: "#333",
+    shadowColor: '#333',
     shadowRadius: 4,
     shadowOpacity: 0.1,
     width: 0,
     shadowOffset: {
-        width: 0,
-        height: 2,
-      },
+      width: 0,
+      height: 2,
+    },
   },
   filter: {
     position: 'absolute',

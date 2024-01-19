@@ -13,7 +13,6 @@ import {SafeAreaView} from 'react-native-safe-area-context';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import axios from 'axios';
 
-
 export default function Profile() {
   const [name, setName] = useState<string>('');
   const [email, setEmail] = useState<string>('');
@@ -66,95 +65,93 @@ export default function Profile() {
   }, []);
   return (
     <>
-     
-        <View style={styles.container}>
-          <SafeAreaView style={styles.logoContainer}>
-            <View style={{alignItems: 'center'}}>
-              <Image
-                source={require('../assets/images/kullu.png')}
-                style={{width: 150, height: 150, marginTop: 320}}
-              />
-              <Text
-                style={{
-                  paddingTop: 20,
-                  fontSize: 32,
-                  fontWeight: 'bold',
-                  marginBottom: 50,
-                  color:"black"
-                }}>
-                My Profiles
-              </Text>
-              <View style={styles.input}>
-                <TextInput style={{fontWeight:"600"}}>{name}</TextInput>
-              </View>
-              <View style={styles.input}>
-                <TextInput style={{fontWeight:"600"}}>{email}</TextInput>
-              </View>
-              <View style={styles.input}>
-                <TextInput style={{fontWeight:"600"}}>{contact}</TextInput>
-              </View>
-              <View
-                style={{
-                  marginHorizontal: 100,
-                  borderRadius: 10,
-                  alignItems: 'center',
-                }}>
-                <TouchableOpacity>
-                  <Text
-                    style={{
-                      fontWeight: 'bold',
-                      height: 40,
-                      backgroundColor: 'darkblue',
-                      paddingHorizontal: 80,
-                      borderRadius: 10,
-                      paddingTop: 8,
-                      fontSize: 16,
-                      marginTop: 17,
-                      color:"white"
-                    }}
-                    onPress={() => EditUserDetail()}>
-                    Edit
-                  </Text>
-                </TouchableOpacity>
-              </View>
+      <View style={styles.container}>
+        <SafeAreaView style={styles.logoContainer}>
+          <View style={{alignItems: 'center'}}>
+            <Image
+              source={require('../assets/images/kullu.png')}
+              style={{width: 150, height: 150, marginTop: 320}}
+            />
+            <Text
+              style={{
+                paddingTop: 20,
+                fontSize: 32,
+                fontWeight: 'bold',
+                marginBottom: 50,
+                color: 'black',
+              }}>
+              My Profiles
+            </Text>
+            <View style={styles.input}>
+              <TextInput style={{fontWeight: '600'}}>{name}</TextInput>
+            </View>
+            <View style={styles.input}>
+              <TextInput style={{fontWeight: '600'}}>{email}</TextInput>
+            </View>
+            <View style={styles.input}>
+              <TextInput style={{fontWeight: '600'}}>{contact}</TextInput>
+            </View>
+            <View
+              style={{
+                marginHorizontal: 100,
+                borderRadius: 10,
+                alignItems: 'center',
+              }}>
+              <TouchableOpacity>
+                <Text
+                  style={{
+                    fontWeight: 'bold',
+                    height: 40,
+                    backgroundColor: 'darkblue',
+                    paddingHorizontal: 80,
+                    borderRadius: 10,
+                    paddingTop: 8,
+                    fontSize: 16,
+                    marginTop: 17,
+                    color: 'white',
+                  }}
+                  onPress={() => EditUserDetail()}>
+                  Edit
+                </Text>
+              </TouchableOpacity>
+            </View>
 
-              <Modal visible={isEditVisible} transparent animationType="slide">
-                <View style={styles.modalContainer}>
-                  <View style={styles.dialogContainer}>
-                    <TextInput
-                      style={styles.input}
-                      placeholder="Name"
-                      value={name}
-                      onChangeText={text => setName(text)}
-                    />
-                    <TextInput
-                      style={styles.input}
-                      placeholder="Email"
-                      value={email}
-                      onChangeText={text => setEmail(text)}
-                    />
-                    <TextInput
-                      style={styles.input}
-                      placeholder="Contact"
-                      value={contact}
-                      onChangeText={text => setContact(text)}
-                    />
+            <Modal visible={isEditVisible} transparent animationType="slide">
+              <View style={styles.modalContainer}>
+                <View style={styles.dialogContainer}>
+                  <TextInput
+                    style={styles.input}
+                    placeholder="Name"
+                    value={name}
+                    onChangeText={text => setName(text)}
+                  />
+                  <TextInput
+                    style={styles.input}
+                    placeholder="Email"
+                    value={email}
+                    onChangeText={text => setEmail(text)}
+                  />
+                  <TextInput
+                    style={styles.input}
+                    placeholder="Contact"
+                    value={contact}
+                    onChangeText={text => setContact(text)}
+                  />
 
-                    <Button  title="Update" onPress={handleUpdate}  />
-                    <View style={{marginTop:10}}>
-                    <Button 
+                  <Button title="Update" onPress={handleUpdate} />
+                  <View style={{marginTop: 10}}>
+                    <Button
                       title="Cancel"
                       onPress={() => setIsEditVisible(false)}
                     />
-                    </View>
                   </View>
                 </View>
-              </Modal>
-            </View>
-            <View></View>
-          </SafeAreaView>
-        </View>
-    
+              </View>
+            </Modal>
+          </View>
+          <View></View>
+        </SafeAreaView>
+      </View>
     </>
   );
 }
@@ -180,12 +177,8 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     width: 280,
     paddingLeft: 14,
-    color:"black",
+    color: 'black',
     height: 50,
- 
-   
-    
-    
   },
   output: {
     borderRadius: 12,
@@ -201,13 +194,11 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: 'rgba(0, 0, 0, 0.5)',
-    
   },
   dialogContainer: {
     backgroundColor: 'white',
     padding: 20,
     borderRadius: 10,
     width: '80%',
-    
   },
 });
